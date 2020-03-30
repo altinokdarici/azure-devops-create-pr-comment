@@ -1,8 +1,0 @@
-{
-  "type": "patch",
-  "comment": "Add beachball",
-  "packageName": "azure-devops-pr-comment",
-  "email": "altinokd@microsoft.com",
-  "dependentChangeType": "patch",
-  "date": "2020-03-30T06:15:41.759Z"
-}

@@ -47,3 +47,7 @@ task("publish-extension", () =>
 );
 
 task("publish", series("pack", "publish-extension"));
+
+task("push", () => {
+  execSync('git add . && git commit -m "Applying package updates"');
+});

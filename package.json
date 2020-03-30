@@ -1,12 +1,13 @@
 {
   "name": "azure-devops-pr-comment",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx just build",
-    "pack": "npx just pack",
-    "publish": "npx just publish",
+    "build": "just build",
+    "pack": "just pack",
+    "publish": "just publish",
+    "git:push": "just push",
     "beachball:change": "beachball change",
     "beachball:check": "beachball check",
     "beachball:bump": "beachball changelog && beachball bump"
