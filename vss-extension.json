@@ -2,7 +2,7 @@
 	"manifestVersion": 1,
 	"id": "pull-request-comment",
 	"name": "Write Azure DevOps Pull Request Comment",
-	"version": "0.0.16",
+	"version": "0.0.18",
 	"publisher": "altinokdarici",
 	"targets": [
 		{

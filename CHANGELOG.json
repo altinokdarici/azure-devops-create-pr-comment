@@ -2,6 +2,21 @@
   "name": "azure-devops-pr-comment",
   "entries": [
     {
+      "date": "Mon, 30 Mar 2020 07:30:25 GMT",
+      "tag": "azure-devops-pr-comment_v0.0.18",
+      "version": "0.0.18",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix bumpVersion",
+            "author": "altinokd@microsoft.com",
+            "commit": "b2d8c3eab5a7ad222b105e12949a6be1e1071b97",
+            "package": "azure-devops-pr-comment"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 30 Mar 2020 07:16:09 GMT",
       "tag": "azure-devops-pr-comment_v0.0.17",
       "version": "0.0.17",
