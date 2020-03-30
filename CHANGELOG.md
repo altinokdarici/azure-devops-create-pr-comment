@@ -1,7 +1,14 @@
 # Change Log - azure-devops-pr-comment
 
-This log was last generated on Mon, 30 Mar 2020 06:22:52 GMT and should not be manually modified.
+This log was last generated on Mon, 30 Mar 2020 07:16:09 GMT and should not be manually modified.
 
+## 0.0.17
+Mon, 30 Mar 2020 07:16:09 GMT
+
+### Patches
+
+- Readme added (altinokd@microsoft.com)
+- Fix repo (altinokd@microsoft.com)
 ## 0.0.16
 Mon, 30 Mar 2020 06:22:52 GMT
 
