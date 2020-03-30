@@ -1,0 +1,29 @@
+{
+  "manifestVersion": 1,
+  "id": "pull-request-comment",
+  "name": "Write Azure DevOps Pull Request Comment",
+  "version": "0.0.13",
+  "publisher": "altinokdarici",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Build/Release Task to create pull request comment.",
+  "categories": ["Azure Pipelines"],
+  "files": [
+    {
+      "path": "dist/buildAndReleaseTask"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "altinokdarici-pull-request-comment",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "dist/buildAndReleaseTask"
+      }
+    }
+  ]
+}

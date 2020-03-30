@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
+  "id": "1e67a309-20cc-456a-9cb0-f46aed9269e3",
+  "name": "PullRequestComment",
+  "friendlyName": "Write Azure DevOps Pull Request Comment",
+  "description": "Write Azure DevOps Pull Request Comment",
+  "helpMarkDown": "",
+  "category": "Utility",
+  "author": "Altinok Darici - altinok.darici@gmail.com",
+  "version": {
+    "Major": 0,
+    "Minor": 0,
+    "Patch": 13
+  },
+  "instanceNameFormat": "Write Azure DevOps Pull Request Comment",
+  "inputs": [
+    {
+      "name": "organizationUrl",
+      "type": "string",
+      "label": "Organization Url",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Organization Url - ie: http://dev.azure.com/myorganization"
+    },
+    {
+      "name": "content",
+      "type": "multiLine",
+      "label": "Comment Message",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "Comment message to be written in the PR"
+    }
+  ],
+  "execution": {
+    "Node10": {
+      "target": "index.js"
+    }
+  }
+}

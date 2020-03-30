@@ -1,0 +1,29 @@
+{
+  "name": "azure-devops-pr-comment",
+  "version": "0.0.13",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx just build",
+    "pack": "npx just pack"
+  },
+  "author": "Altinok Darici - altinok.darici@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "azure-devops-node-api": "^10.1.0",
+    "azure-pipelines-task-lib": "^2.9.3",
+    "fs-extra": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/node": "^13.9.5",
+    "@types/q": "^1.5.2",
+    "just-scripts": "^0.36.1",
+    "tfx-cli": "^0.7.11",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
