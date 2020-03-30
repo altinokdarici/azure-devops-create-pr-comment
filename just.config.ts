@@ -51,7 +51,7 @@ task(
   series(
     () => execSync("beachball changelog"),
     () => execSync("beachball bump"),
-    () => execSync("node lib/bumpVersion.js"),
+    () => execSync("node dist/bumpVersion.js"),
     () =>
       execSync(
         'git add . && git commit -a -m "Applying package updates" && git push'
