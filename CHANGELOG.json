@@ -2,6 +2,21 @@
   "name": "azure-devops-pr-comment",
   "entries": [
     {
+      "date": "Mon, 30 Mar 2020 06:22:52 GMT",
+      "tag": "azure-devops-pr-comment_v0.0.16",
+      "version": "0.0.16",
+      "comments": {
+        "patch": [
+          {
+            "comment": "reorganize just.config.ts",
+            "author": "altinokd@microsoft.com",
+            "commit": "bda52a301d0afc4967ca4618f5957bc7e8cbc059",
+            "package": "azure-devops-pr-comment"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 30 Mar 2020 06:16:47 GMT",
       "tag": "azure-devops-pr-comment_v0.0.15",
       "version": "0.0.15",

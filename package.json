@@ -1,6 +1,6 @@
 {
   "name": "azure-devops-pr-comment",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "git:push": "just git:push",
     "beachball:change": "beachball change",
     "beachball:check": "beachball check",
-    "beachball:bump": "beachball changelog && beachball bump"
+    "beachball:bump": "beachball changelog && beachball bump && npm run git:push"
   },
   "author": "Altinok Darici - altinok.darici@gmail.com",
   "license": "ISC",
