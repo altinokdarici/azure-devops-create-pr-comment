@@ -1,5 +1,4 @@
 import { readFile, writeFile } from "fs-extra";
-import path from "path";
 import { exit } from "process";
 
 interface PackageJson {
@@ -15,9 +14,7 @@ const writeJson = async <T>(path: string, content: T) => {
 };
 
 const readPackageJson = async () => {
-  const content = await readJson<PackageJson>(
-    path.join(__dirname, "package.json")
-  );
+  const content = await readJson<PackageJson>("package.json");
   const [major, minor, patch] = content.version.split(".");
   return {
     major: Number(major),
@@ -34,7 +31,7 @@ interface TaskJson {
   };
 }
 const updateTaskJson = async (major: number, minor: number, patch: number) => {
-  const filePath = path.join(__dirname, "task.json");
+  const filePath = "task.json";
   const content = await readJson<TaskJson>(filePath);
   content.version = {
     Major: major,
@@ -50,7 +47,7 @@ const updateExtensionJson = async (
   minor: number,
   patch: number
 ) => {
-  const filePath = path.join(__dirname, "vss-extension.json");
+  const filePath = "vss-extension.json";
   const content = await readJson<PackageJson>(filePath);
   content.version = `${major}.${minor}.${patch}`;
   return writeJson(filePath, content);
