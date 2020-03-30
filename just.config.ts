@@ -4,8 +4,7 @@ import {
   copyInstructionsTask,
   series,
   task,
-  webpackTask,
-  tscTask
+  webpackTask
 } from "just-scripts";
 
 task(
@@ -15,7 +14,7 @@ task(
   })
 );
 
-task("build", series("clean", tscTask(), webpackTask()));
+task("build", series("clean", webpackTask()));
 
 task(
   "copy",

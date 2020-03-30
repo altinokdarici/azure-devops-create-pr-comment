@@ -2,7 +2,10 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.ts",
+  entry: {
+    index: "./src/index.ts",
+    bumpVersion: "./src/bumpVersion.ts"
+  },
   target: "node",
   module: {
     rules: [
@@ -14,7 +17,6 @@ module.exports = {
     ]
   },
   output: {
-    filename: "index.js",
     path: path.resolve(__dirname, "dist")
   }
 };

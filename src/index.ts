@@ -76,7 +76,6 @@ const getInputs = () => {
 
 async function run() {
   try {
-    taskLib.debug("heyo run");
     const { accessToken, pullRequestId, repositoryId } = getVariables();
     const { organizationUrl, content } = getInputs();
 
