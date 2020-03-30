@@ -40,15 +40,9 @@ task("create-extension", () =>
 
 task("pack", series("copy", "create-extension"));
 
-task("publish-extension", () =>
-  execSync(
-    `tfx extension publish --manifest-globs vss-extension.json --token ${process.env.PUBLISH_TOKEN}`
-  )
+task("bump-publish", () =>
+  execSync(`node dist/bumpVersion.js ${process.env.PUBLISH_TOKEN}`)
 );
-
-task("publish", series("pack", "publish-extension"));
-
-task("bump-versions", () => execSync("node dist/bumpVersion.js"));
 
 task("git-push", () =>
   execSync(
@@ -56,4 +50,4 @@ task("git-push", () =>
   )
 );
 
-task("bump", series("bump-versions", "git-push"));
+task("bump", series("bump-publish", "git-push"));

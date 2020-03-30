@@ -54,7 +54,12 @@ const updateExtensionJson = async (
   return writeJson(filePath, content);
 };
 
-export const bumpVersion = async () => {
+const publishExtension = (token: string) =>
+  execSync(
+    `tfx extension publish --manifest-globs vss-extension.json --token ${token}`
+  );
+
+export const bumpVersion = async (token: string) => {
   const {
     major: preMajor,
     minor: preMinor,
@@ -66,10 +71,12 @@ export const bumpVersion = async () => {
   if (major !== preMajor && minor !== preMinor && patch != prePatch) {
     await updateTaskJson(major, minor, patch);
     await updateExtensionJson(major, minor, patch);
+    publishExtension(token);
   }
 };
 
-bumpVersion()
+const args = process.argv.slice(2);
+bumpVersion(args[0])
   .then(() => {
     console.log("task.json and vss-extension.json bumped");
   })
