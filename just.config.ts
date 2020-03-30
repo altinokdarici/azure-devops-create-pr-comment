@@ -48,14 +48,7 @@ task("publish-extension", () =>
 
 task("publish", series("pack", "publish-extension"));
 
-task(
-  "bump-versions",
-  series(
-    () => execSync("beachball changelog"),
-    () => execSync("beachball bump"),
-    () => execSync("node dist/bumpVersion.js")
-  )
-);
+task("bump-versions", () => execSync("node dist/bumpVersion.js"));
 
 task("git-push", () =>
   execSync(

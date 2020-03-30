@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "fs-extra";
 import { exit } from "process";
+import { execSync } from "child_process";
 
 interface PackageJson {
   version: string;
@@ -54,9 +55,18 @@ const updateExtensionJson = async (
 };
 
 export const bumpVersion = async () => {
+  const {
+    major: preMajor,
+    minor: preMinor,
+    patch: prePatch
+  } = await readPackageJson();
+  execSync("beachball changelog");
+  execSync("beachball bump");
   const { major, minor, patch } = await readPackageJson();
-  await updateTaskJson(major, minor, patch);
-  await updateExtensionJson(major, minor, patch);
+  if (major !== preMajor && minor !== preMinor && patch != prePatch) {
+    await updateTaskJson(major, minor, patch);
+    await updateExtensionJson(major, minor, patch);
+  }
 };
 
 bumpVersion()
