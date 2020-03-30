@@ -18,7 +18,7 @@ jobs:
         run: npm run build
 
       - name: Set Git Configuration
-        run: git config --global user.email "bot@example.com" &&  git config --global user.name "Package Update Bot"'
+        run: git config --global user.email "bot@example.com" &&  git config --global user.name "Package Update Bot"
 
       - name: npm run bump
         run: npm run bump
