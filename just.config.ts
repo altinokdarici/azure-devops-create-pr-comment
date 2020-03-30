@@ -14,6 +14,8 @@ task(
   })
 );
 
+task("build", series("clean", webpackTask()));
+
 task(
   "copy",
   copyInstructionsTask({
@@ -36,8 +38,6 @@ task("create-extension", () =>
   )
 );
 
-task("build", series("clean", webpackTask()));
-
 task("pack", series("build", "copy", "create-extension"));
 
 task("publish-extension", () =>
@@ -48,8 +48,8 @@ task("publish-extension", () =>
 
 task("publish", series("pack", "publish-extension"));
 
-task("git:push", () => {
+task("git:push", () =>
   execSync(
     'git add . && git commit -a -m "Applying package updates" && git push'
-  );
-});
+  )
+);
