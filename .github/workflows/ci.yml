@@ -18,8 +18,8 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: beachball bump
-        run: npm run beachball:bump
+      - name: npm run bump
+        run: npm run bump
 
       - name: npm run publish
         run: npm run publish
