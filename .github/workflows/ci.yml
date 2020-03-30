@@ -15,8 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: npm install
-        run: npm install
+      - name: npm ci
+        run: npm ci
 
       - name: npm run bump
         run: npm run bump
