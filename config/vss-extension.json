@@ -13,7 +13,7 @@
   "categories": ["Azure Pipelines"],
   "files": [
     {
-      "path": "dist/buildAndReleaseTask"
+      "path": "../dist/buildAndReleaseTask"
     }
   ],
   "contributions": [

@@ -19,7 +19,7 @@ task(
   copyInstructionsTask({
     copyInstructions: [
       {
-        sourceFilePath: "task.json",
+        sourceFilePath: "config/task.json",
         destinationFilePath: "dist/buildAndReleaseTask/task.json"
       },
       {
@@ -32,10 +32,13 @@ task(
 
 task("tfx", () =>
   execSync(
-    "tfx extension create --manifest-globs vss-extension.json --output-path dist"
+    "tfx extension create --manifest-globs ./config/vss-extension.json --output-path dist"
   )
 );
 
-task("build", series("clean", webpackTask()));
+task(
+  "build",
+  series("clean", webpackTask({ config: "./config/webpack.config.js" }))
+);
 
 task("pack", series("build", "copy", "tfx"));
