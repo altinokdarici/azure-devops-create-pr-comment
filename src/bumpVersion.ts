@@ -68,7 +68,7 @@ export const bumpVersion = async (token: string) => {
   execSync("beachball changelog");
   execSync("beachball bump");
   const { major, minor, patch } = await readPackageJson();
-  if (major !== preMajor && minor !== preMinor && patch != prePatch) {
+  if (major !== preMajor || minor !== preMinor || patch != prePatch) {
     await updateTaskJson(major, minor, patch);
     await updateExtensionJson(major, minor, patch);
     publishExtension(token);
