@@ -7,7 +7,7 @@
     "build": "just build",
     "pack": "just pack",
     "publish": "just publish",
-    "git:push": "just push",
+    "git:push": "just git:push",
     "beachball:change": "beachball change",
     "beachball:check": "beachball check",
     "beachball:bump": "beachball changelog && beachball bump"
