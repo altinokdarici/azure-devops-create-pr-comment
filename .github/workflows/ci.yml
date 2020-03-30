@@ -18,6 +18,9 @@ jobs:
       - name: npm ci
         run: npm ci
 
+      - name: npm run build
+        run: npm run build
+
       - name: npm run bump
         run: npm run bump
 

@@ -38,7 +38,7 @@ task("create-extension", () =>
   )
 );
 
-task("pack", series("build", "copy", "create-extension"));
+task("pack", series("copy", "create-extension"));
 
 task("publish-extension", () =>
   execSync(
