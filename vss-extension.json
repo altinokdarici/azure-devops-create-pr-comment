@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "pull-request-comment",
   "name": "Write Azure DevOps Pull Request Comment",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "publisher": "altinokdarici",
   "targets": [
     {
@@ -13,7 +13,7 @@
   "categories": ["Azure Pipelines"],
   "files": [
     {
-      "path": "../dist/buildAndReleaseTask"
+      "path": "dist/buildAndReleaseTask"
     }
   ],
   "contributions": [

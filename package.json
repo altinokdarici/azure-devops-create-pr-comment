@@ -1,11 +1,12 @@
 {
   "name": "azure-devops-pr-comment",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npx just build",
-    "pack": "npx just pack"
+    "pack": "npx just pack",
+    "publish": "npx just publish"
   },
   "author": "Altinok Darici - altinok.darici@gmail.com",
   "license": "ISC",
