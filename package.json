@@ -6,7 +6,6 @@
   "scripts": {
     "build": "just build",
     "pack": "just pack",
-    "publish": "just publish",
     "git:push": "just git:push",
     "change": "beachball change",
     "beachball:check": "beachball check",
