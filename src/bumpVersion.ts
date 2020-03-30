@@ -54,10 +54,12 @@ const updateExtensionJson = async (
   return writeJson(filePath, content);
 };
 
-const publishExtension = (token: string) =>
+const publishExtension = (token: string) => {
+  execSync("npm run pack");
   execSync(
     `tfx extension publish --manifest-globs vss-extension.json --token ${token}`
   );
+};
 
 export const bumpVersion = async (token: string) => {
   const {
