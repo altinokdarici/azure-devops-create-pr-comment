@@ -2,6 +2,21 @@
   "name": "azure-devops-pr-comment",
   "entries": [
     {
+      "date": "Mon, 30 Mar 2020 07:46:31 GMT",
+      "tag": "azure-devops-pr-comment_v0.0.18",
+      "version": "0.0.18",
+      "comments": {
+        "none": [
+          {
+            "comment": "Fix yml files",
+            "author": "altinokd@microsoft.com",
+            "commit": "0a2ecdeede56c6d74fa4b9e6e27020414d08d51f",
+            "package": "azure-devops-pr-comment"
+          }
+        ]
+      }
+    },
+    {
       "date": "Mon, 30 Mar 2020 07:30:25 GMT",
       "tag": "azure-devops-pr-comment_v0.0.18",
       "version": "0.0.18",
