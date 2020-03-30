@@ -1,12 +1,8 @@
-# This is a basic workflow to help you get started with Actions
+name: PR
 
-name: CI
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -17,9 +13,9 @@ jobs:
 
       - name: npm ci
         run: npm ci
-        
+
       - name: npm run beachball:check
         run: npm run beachball:check
-        
+
       - name: npm run build
         run: npm run build
