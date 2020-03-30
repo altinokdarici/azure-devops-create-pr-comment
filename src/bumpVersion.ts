@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "fs-extra";
 import { exit } from "process";
+import { execSync } from "child_process";
 
 interface PackageJson {
   version: string;
@@ -53,13 +54,29 @@ const updateExtensionJson = async (
   return writeJson(filePath, content);
 };
 
-export const bumpVersion = async () => {
+const publishExtension = (token: string) =>
+  execSync(
+    `tfx extension publish --manifest-globs vss-extension.json --token ${token}`
+  );
+
+export const bumpVersion = async (token: string) => {
+  const {
+    major: preMajor,
+    minor: preMinor,
+    patch: prePatch
+  } = await readPackageJson();
+  execSync("beachball changelog");
+  execSync("beachball bump");
   const { major, minor, patch } = await readPackageJson();
-  await updateTaskJson(major, minor, patch);
-  await updateExtensionJson(major, minor, patch);
+  if (major !== preMajor && minor !== preMinor && patch != prePatch) {
+    await updateTaskJson(major, minor, patch);
+    await updateExtensionJson(major, minor, patch);
+    publishExtension(token);
+  }
 };
 
-bumpVersion()
+const args = process.argv.slice(2);
+bumpVersion(args[0])
   .then(() => {
     console.log("task.json and vss-extension.json bumped");
   })
