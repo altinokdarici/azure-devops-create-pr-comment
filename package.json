@@ -8,7 +8,7 @@
     "pack": "just pack",
     "publish": "just publish",
     "git:push": "just git:push",
-    "beachball:change": "beachball change",
+    "change": "beachball change",
     "beachball:check": "beachball check",
     "bump": "just bump-versions"
   },
