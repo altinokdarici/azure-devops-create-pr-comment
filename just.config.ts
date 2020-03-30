@@ -4,7 +4,8 @@ import {
   copyInstructionsTask,
   series,
   task,
-  webpackTask
+  webpackTask,
+  tscTask
 } from "just-scripts";
 
 task(
@@ -14,7 +15,7 @@ task(
   })
 );
 
-task("build", series("clean", webpackTask()));
+task("build", series("clean", tscTask(), webpackTask()));
 
 task(
   "copy",
@@ -46,10 +47,17 @@ task("publish-extension", () =>
   )
 );
 
-task("publish", series("pack", "publish-extension"));
-
-task("git:push", () =>
-  execSync(
-    'git add . && git commit -a -m "Applying package updates" && git push'
+task(
+  "bump-versions",
+  series(
+    () => execSync("beachball changelog"),
+    () => execSync("beachball bump"),
+    () => execSync("node lib/bumpVersion.js"),
+    () =>
+      execSync(
+        'git add . && git commit -a -m "Applying package updates" && git push'
+      )
   )
 );
+
+task("publish", series("pack", "publish-extension"));

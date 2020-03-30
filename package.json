@@ -10,7 +10,7 @@
     "git:push": "just git:push",
     "beachball:change": "beachball change",
     "beachball:check": "beachball check",
-    "beachball:bump": "beachball changelog && beachball bump && npm run git:push"
+    "bump": "just bump-versions"
   },
   "author": "Altinok Darici - altinok.darici@gmail.com",
   "license": "ISC",

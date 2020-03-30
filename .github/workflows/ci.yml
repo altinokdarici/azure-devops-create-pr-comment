@@ -6,19 +6,22 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: npm install
-      run: npm install
-      
-    - name: npm run publish
-      run: npm run publish
-      env: 
-       PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+      - name: npm install
+        run: npm install
+
+      - name: beachball bump
+        run: npm run beachball:bump
+
+      - name: npm run publish
+        run: npm run publish
+        env:
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
