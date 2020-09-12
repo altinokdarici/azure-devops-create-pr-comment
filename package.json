@@ -22,7 +22,7 @@
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^13.9.5",
     "@types/q": "^1.5.2",
-    "beachball": "^1.23.3",
+    "beachball": "^1.36.0",
     "just-scripts": "^0.36.1",
     "tfx-cli": "^0.7.11",
     "ts-loader": "^6.2.2",
